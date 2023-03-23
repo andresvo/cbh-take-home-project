@@ -16,3 +16,9 @@ Based on the information given, break this ticket down into 2-5 individual ticke
 You will be graded on the level of detail in each ticket, the clarity of the execution plan within and between tickets, and the intelligibility of your language. You don't need to be a native English speaker, but please proof-read your work.
 
 ## Your Breakdown Here
+
+1. Create a new table FacilityAgent in the database. Add the following fields: facility_id, agent_id, custom_agent_id. Add a unique key for fields facility_id + agent_id. Add foreign keys to facility_id (Facility.id) and agent_id (Agent.id). None of the fields is nullable.
+
+2. Create a function to store the custom id: setFacilityAgentId(facility_id, agent_id, custom_agent_id). This function should insert a row in the FacilityAgent table, or update in case the falicity_id + agent_id exists. All parameters are required.
+
+3. Modify getShiftsByFacility function to return the custom_agent_id from the new FacilityAgent table instead of the agent_id.
