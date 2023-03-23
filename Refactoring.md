@@ -9,3 +9,8 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+- Added initial value to candidate, since it only changes in case event is defined.
+- Changed to only one top level if statement, so it is easier to follow.
+- Created separated encrypt function to avoid repeating code.
+- Moved the not string type condition to the only case that could have a non string type.

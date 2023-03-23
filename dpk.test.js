@@ -17,6 +17,12 @@ describe("deterministicPartitionKey", () => {
     expect(trivialKey).toBe("123");
   });
 
+  it("Returns hash when given string input", () => {
+    const event = "other";
+    const trivialKey = deterministicPartitionKey(event);
+    expect(trivialKey).toBe(crypto.createHash("sha3-512").update(JSON.stringify(event)).digest("hex"));
+  });
+
   it("Returns hash when given object input without partitionKey", () => {
     const event = {foo: "bar"};
     const trivialKey = deterministicPartitionKey(event);
